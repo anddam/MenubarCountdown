@@ -47,10 +47,7 @@
 
 - (NSTimeInterval)timerInterval {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    int timerHours = [defaults integerForKey:UserDefaultsTimerHoursKey];
-    int timerMinutes = [defaults integerForKey:UserDefaultsTimerMinutesKey];
-    int timerSeconds = [defaults integerForKey:UserDefaultsTimerSecondsKey];
-    return (timerHours * 3600) + (timerMinutes * 60) + timerSeconds;
+    return [defaults integerForKey:UserDefaultsTimerMinutesKey] * 60;
 }
 
 

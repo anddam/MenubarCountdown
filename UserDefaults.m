@@ -24,15 +24,12 @@
 #import "UserDefaults.h"
 
 
-NSString *UserDefaultsTimerHoursKey = @"TimerHours";
 NSString *UserDefaultsTimerMinutesKey = @"TimerMinutes";
-NSString *UserDefaultsTimerSecondsKey = @"TimerSeconds";
 NSString *UserDefaultsPlayAlertSoundOnExpirationKey = @"PlayAlertSoundOnExpiration";
 NSString *UserDefaultsAnnounceExpirationKey = @"AnnounceExpiration";
 NSString *UserDefaultsAnnouncementTextKey = @"AnnouncementText";
 NSString *UserDefaultsShowAlertWindowOnExpirationKey = @"ShowAlertWindowOnExpiration";
 NSString *UserDefaultsShowStartDialogOnLaunchKey = @"ShowStartDialogOnLaunch";
-NSString *UserDefaultsShowSeconds = @"ShowSeconds";
 
 
 @implementation UserDefaults
