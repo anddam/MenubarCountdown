@@ -155,6 +155,7 @@
   secondsRemaining = 0;
   NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
   [pauseMenuItem setEnabled:NO];
+  [pauseMenuItem setTitle:@"Pause"];
   [self updateStatusItemTitle:0];
   [stopwatch reset];
 }
