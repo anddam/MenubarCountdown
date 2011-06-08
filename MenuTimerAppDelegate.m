@@ -85,7 +85,7 @@
     // Call startTimer: whenever Growl notification is clicked
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self
-           selector:@selector(startTimer:)
+           selector:@selector(startStopTimer:)
                name:GrowlHandlerTimerExpiredNotificationWasClicked
              object:nil];
     [growl connectToGrowl];
