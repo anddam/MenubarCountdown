@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		2426BF0D139FA59B00FC20D2 /* hourglass-running.png in Resources */ = {isa = PBXBuildFile; fileRef = 2426BF0C139FA59B00FC20D2 /* hourglass-running.png */; };
+		2426BF10139FA9BF00FC20D2 /* hourglass-stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */; };
 		4E04D6750F9D476A006023D1 /* TimerExpiredAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04D6740F9D476A006023D1 /* TimerExpiredAlertController.m */; };
 		4E04D6B90F9D5E2F006023D1 /* TimerExpiredAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E04D6B70F9D5E2F006023D1 /* TimerExpiredAlert.xib */; };
 		4E255A400FD9FD9F0025F48C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E255A3F0FD9FD9F0025F48C /* Growl.framework */; };
@@ -48,6 +49,7 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2426BF0C139FA59B00FC20D2 /* hourglass-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hourglass-running.png"; sourceTree = "<group>"; };
+		2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hourglass-stopped.png"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBC344A0F7D010100AE610D /* Credits.rtf */,
+				2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */,
 				2426BF0C139FA59B00FC20D2 /* hourglass-running.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -242,6 +245,7 @@
 				4E753AA90F8E3A67007B2C05 /* MenuTimerIcon.icns in Resources */,
 				4E04D6B90F9D5E2F006023D1 /* TimerExpiredAlert.xib in Resources */,
 				2426BF0D139FA59B00FC20D2 /* hourglass-running.png in Resources */,
+				2426BF10139FA9BF00FC20D2 /* hourglass-stopped.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
