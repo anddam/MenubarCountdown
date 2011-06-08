@@ -29,7 +29,7 @@
 @class GrowlHandler;
 
 /// \brief Application delegate
-@interface MenuTimerAppDelegate : NSObject {
+@interface MenuTimerAppDelegate : NSObject <NSMenuDelegate> {
     int timerSettingSeconds;   ///< Timer setting
     int secondsRemaining;      ///< Number of seconds remaining
 

@@ -78,6 +78,7 @@
     [statusItem retain];
     [self updateStatusItemTitle:0];
     [statusItem setMenu:menu];
+  [menu setDelegate:self];
     [statusItem setHighlightMode:YES];
     [statusItem setToolTip:NSLocalizedString(@"Menubar Countdown",
                                              @"Status Item Tooltip")];
@@ -96,6 +97,15 @@
     }
 }
 
+- (void)menuWillOpen:(NSMenu *)inMenu {
+  NSMenuItem *startMenuItem = [menu itemAtIndex:0];
+  if(self.timerIsRunning) {
+    [startMenuItem setTitle:[NSString stringWithFormat:@"Start new timer (%d minutes left)", secondsRemaining / 60]];
+  }
+  else {
+    [startMenuItem setTitle:@"Start..."];
+  }
+}
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
     int minutes = (timeRemaining / 60);
