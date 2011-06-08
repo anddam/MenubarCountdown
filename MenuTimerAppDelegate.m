@@ -97,31 +97,8 @@
 
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    bool showSeconds = [defaults boolForKey:UserDefaultsShowSeconds];
-
-    if (!showSeconds) {
-        // Round timeRemaining up to the next minute
-        double minutes = (double)timeRemaining / 60.0;
-        timeRemaining = (int)ceil(minutes) * 60;
-    }
-
-    int hours = timeRemaining / 3600;
-    timeRemaining %= 3600;
     int minutes = timeRemaining / 60;
-    int seconds = timeRemaining % 60;
-
-    // TODO: Use localized time-formatting function
-    NSString* timeString;
-    if (showSeconds) {
-        timeString = [NSString stringWithFormat:@"%02d:%02d:%02d",
-                      hours, minutes, seconds];
-    }
-    else {
-        timeString = [NSString stringWithFormat:@"%02d:%02d",
-                      hours, minutes];
-    }
-
+    NSString* timeString = [NSString stringWithFormat:@"%02d", minutes];
     [statusItem setTitle:timeString];
 }
 
