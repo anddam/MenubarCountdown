@@ -151,6 +151,8 @@
 
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender {
     [self dismissTimerExpiredAlert:sender];
+  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
+  [pauseMenuItem setEnabled:YES];
 
     [startTimerDialogController dismissDialog:sender];
 
@@ -195,6 +197,9 @@
 
 
 - (void)timerDidExpire {
+  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
+  [pauseMenuItem setEnabled:NO];
+
     self.timerIsRunning = NO;
     [self updateStatusItemTitle:0];
 
