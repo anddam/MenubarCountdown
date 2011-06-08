@@ -139,6 +139,15 @@
     [startTimerDialogController showDialog];
 }
 
+- (IBAction)resetTimer:(id)sender {
+  [self dismissTimerExpiredAlert:sender];
+  self.timerIsRunning = NO;
+  secondsRemaining = 0;
+  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
+  [pauseMenuItem setEnabled:NO];
+  [self updateStatusItemTitle:0];
+  [stopwatch reset];
+}
 
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender {
     [self dismissTimerExpiredAlert:sender];
@@ -238,13 +247,6 @@
     [timerExpiredAlertController close];
 }
 
-
-/*
-- (IBAction)restartCountdownWasClicked:(id)sender {
-    [self dismissTimerExpiredAlert:sender];
-    [self startTimer:sender];
-}
-*/
 
 - (IBAction)showAboutPanel:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];

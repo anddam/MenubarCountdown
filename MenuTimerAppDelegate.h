@@ -60,6 +60,8 @@
 /// \brief Stop the timer
 - (IBAction)pauseResumeTimer:(id)sender;
 
+- (IBAction)resetTimer:(id)sender;
+
 /// \brief Invoked when the Start button on the StartTimerDialogController's window is clicked
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender;
 
