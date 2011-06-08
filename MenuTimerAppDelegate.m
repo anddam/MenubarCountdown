@@ -169,9 +169,9 @@
 
     [[NSUserDefaults standardUserDefaults] synchronize];
 
+  [self resetTimer:self];
     timerSettingSeconds = (int)[startTimerDialogController timerInterval];
     self.timerIsRunning = YES;
-    [stopwatch reset];
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
 }
