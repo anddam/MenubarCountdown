@@ -74,10 +74,17 @@
 
     [stopwatch reset];
 
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+#if SHOW_MINUTES_IN_MENU
+  statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+#else
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+#endif
     [statusItem retain];
     [self updateStatusItemTitle:0];
     [statusItem setMenu:menu];
+#if ! SHOW_MINUTES_IN_MENU
+  [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
+#endif
   [menu setDelegate:self];
     [statusItem setHighlightMode:YES];
     [statusItem setToolTip:NSLocalizedString(@"Menubar Countdown",
@@ -108,9 +115,18 @@
 }
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
+#if SHOW_MINUTES_IN_MENU
     int minutes = (timeRemaining / 60);
     NSString* timeString = [NSString stringWithFormat:@"%02d", minutes];
     [statusItem setTitle:timeString];
+#else
+  if(timeRemaining > 0) {
+    [statusItem setImage:[NSImage imageNamed:@"hourglass-running.png"]];
+  }
+  else {
+    [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
+  }
+#endif
 }
 
 
@@ -146,6 +162,9 @@
     if (!startTimerDialogController) {
         [NSBundle loadNibNamed:@"StartTimerDialog" owner:self];
     }
+#if ! SHOW_MINUTES_IN_MENU
+  [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
+#endif
     [startTimerDialogController showDialog];
 }
 

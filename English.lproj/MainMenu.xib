@@ -68,7 +68,7 @@
 						<reference key="NSOnImage" ref="335315670"/>
 						<reference key="NSMixedImage" ref="713785832"/>
 					</object>
-					<object class="NSMenuItem" id="338740946">
+					<object class="NSMenuItem" id="310167896">
 						<reference key="NSMenu" ref="945262297"/>
 						<string key="NSTitle">Reset</string>
 						<string key="NSKeyEquiv"/>
@@ -195,7 +195,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">resetTimer:</string>
 						<reference key="source" ref="613508438"/>
-						<reference key="destination" ref="338740946"/>
+						<reference key="destination" ref="310167896"/>
 					</object>
 					<int key="connectionID">524</int>
 				</object>
@@ -243,7 +243,7 @@
 							<reference ref="474293149"/>
 							<reference ref="101635464"/>
 							<reference ref="636116047"/>
-							<reference ref="338740946"/>
+							<reference ref="310167896"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -294,7 +294,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">522</int>
-						<reference key="object" ref="338740946"/>
+						<reference key="object" ref="310167896"/>
 						<reference key="parent" ref="945262297"/>
 					</object>
 				</object>
