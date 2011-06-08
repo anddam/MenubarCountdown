@@ -35,6 +35,8 @@
 - (void)nextSecondTimerDidFire:(NSTimer*)timer;
 - (void)updateStatusItemTitle:(int)timeRemaining;
 - (void)timerDidExpire;
+- (void)pauseTimer;
+- (void)resumeTimer;
 - (void)announceTimerExpired;
 - (NSString*)announcementText;
 - (void)showTimerExpiredAlert;
@@ -44,7 +46,6 @@
 @implementation MenuTimerAppDelegate
 
 @synthesize timerIsRunning;
-@synthesize canResume;
 
 
 + (void)initialize {
@@ -91,13 +92,13 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults boolForKey:UserDefaultsShowStartDialogOnLaunchKey]) {
-        [self startTimer:self];
+        [self startStopTimer:self];
     }
 }
 
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
-    int minutes = timeRemaining / 60;
+    int minutes = (timeRemaining / 60);
     NSString* timeString = [NSString stringWithFormat:@"%02d", minutes];
     [statusItem setTitle:timeString];
 }
@@ -129,7 +130,7 @@
 }
 
 
-- (IBAction)startTimer:(id)sender {
+- (IBAction)startStopTimer:(id)sender {
     [self dismissTimerExpiredAlert:sender];
 
     if (!startTimerDialogController) {
@@ -148,28 +149,36 @@
 
     timerSettingSeconds = (int)[startTimerDialogController timerInterval];
     self.timerIsRunning = YES;
-    self.canResume = NO;
     [stopwatch reset];
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
 }
 
-
-- (IBAction)stopTimer:(id)sender {
-    self.timerIsRunning = NO;
-    if (secondsRemaining > 0) {
-        self.canResume = YES;
-    }
+- (IBAction)pauseResumeTimer:(id)sender {
+  NSMenuItem *pauseResumeItem = [menu itemAtIndex:1];
+  if(self.timerIsRunning) {
+    [self pauseTimer];
+    [pauseResumeItem setTitle:@"Resume"];
+  }
+  else {
+    [self resumeTimer];
+    [pauseResumeItem setTitle:@"Pause"];
+  }
 }
 
+- (void)pauseTimer {
+  if(secondsRemaining < 1) {
+    return;
+  }
+  self.timerIsRunning = NO;
+}
 
-- (IBAction)resumeTimer:(id)sender {
+- (void)resumeTimer {
     if (secondsRemaining < 1) {
         return;
     }
     timerSettingSeconds = secondsRemaining;
     self.timerIsRunning = YES;
-    self.canResume = NO;
     [stopwatch reset];
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
@@ -177,7 +186,6 @@
 
 
 - (void)timerDidExpire {
-    self.canResume = NO;
     self.timerIsRunning = NO;
     [self updateStatusItemTitle:0];
 
@@ -231,11 +239,12 @@
 }
 
 
+/*
 - (IBAction)restartCountdownWasClicked:(id)sender {
     [self dismissTimerExpiredAlert:sender];
     [self startTimer:sender];
 }
-
+*/
 
 - (IBAction)showAboutPanel:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];

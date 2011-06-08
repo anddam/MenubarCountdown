@@ -34,7 +34,6 @@
     int secondsRemaining;      ///< Number of seconds remaining
 
     BOOL timerIsRunning;       ///< Instance variable for \c timerIsRunning property
-    BOOL canResume;            ///< Instance variable for \c canResume property
 
     NSStatusItem *statusItem;  ///< Reference to NSStatusItem
 
@@ -50,32 +49,21 @@
 /// This property is bound to the Stop menu item's Enabled property
 @property (nonatomic) BOOL timerIsRunning;
 
-/// \brief Indicates whether the timer can be resumed
-///
-/// This property is bound to the Resume menu item's Enabled property
-@property (nonatomic) BOOL canResume;
-
 /// \brief Handle the "About..." menu item
 - (IBAction)showAboutPanel:(id)sender;
 
 /// \brief Start the timer
 ///
 /// Displays the StartTimerDialogController's window
-- (IBAction)startTimer:(id)sender;
+- (IBAction)startStopTimer:(id)sender;
 
 /// \brief Stop the timer
-- (IBAction)stopTimer:(id)sender;
-
-/// \brief Resume the timer
-- (IBAction)resumeTimer:(id)sender;
+- (IBAction)pauseResumeTimer:(id)sender;
 
 /// \brief Invoked when the Start button on the StartTimerDialogController's window is clicked
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender;
 
 /// \brief Invoked when OK button is clicked in timer-expired alert window
 - (IBAction)dismissTimerExpiredAlert:(id)sender;
-
-/// \brief Invoked when the "Restart Countdown..." button is clicked
-- (IBAction)restartCountdownWasClicked:(id)sender;
 
 @end
