@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		2426BF0D139FA59B00FC20D2 /* hourglass-running.png in Resources */ = {isa = PBXBuildFile; fileRef = 2426BF0C139FA59B00FC20D2 /* hourglass-running.png */; };
-		2426BF10139FA9BF00FC20D2 /* hourglass-stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */; };
+		24FAA42A13A0E102000D36DF /* hourglass-paused-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42213A0E102000D36DF /* hourglass-paused-inverted.png */; };
+		24FAA42B13A0E102000D36DF /* hourglass-paused.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42313A0E102000D36DF /* hourglass-paused.png */; };
+		24FAA42C13A0E102000D36DF /* hourglass-running-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42413A0E102000D36DF /* hourglass-running-inverted.png */; };
+		24FAA42D13A0E102000D36DF /* hourglass-running.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42513A0E102000D36DF /* hourglass-running.png */; };
+		24FAA42E13A0E102000D36DF /* hourglass-started-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42613A0E102000D36DF /* hourglass-started-inverted.png */; };
+		24FAA42F13A0E102000D36DF /* hourglass-started.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42713A0E102000D36DF /* hourglass-started.png */; };
+		24FAA43013A0E102000D36DF /* hourglass-stopped-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42813A0E102000D36DF /* hourglass-stopped-inverted.png */; };
+		24FAA43113A0E102000D36DF /* hourglass-stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FAA42913A0E102000D36DF /* hourglass-stopped.png */; };
 		4E04D6750F9D476A006023D1 /* TimerExpiredAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04D6740F9D476A006023D1 /* TimerExpiredAlertController.m */; };
 		4E04D6B90F9D5E2F006023D1 /* TimerExpiredAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E04D6B70F9D5E2F006023D1 /* TimerExpiredAlert.xib */; };
 		4E255A400FD9FD9F0025F48C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E255A3F0FD9FD9F0025F48C /* Growl.framework */; };
@@ -48,8 +54,14 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2426BF0C139FA59B00FC20D2 /* hourglass-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hourglass-running.png"; sourceTree = "<group>"; };
-		2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hourglass-stopped.png"; sourceTree = "<group>"; };
+		24FAA42213A0E102000D36DF /* hourglass-paused-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-paused-inverted.png"; path = "Graphics/hourglass-paused-inverted.png"; sourceTree = "<group>"; };
+		24FAA42313A0E102000D36DF /* hourglass-paused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-paused.png"; path = "Graphics/hourglass-paused.png"; sourceTree = "<group>"; };
+		24FAA42413A0E102000D36DF /* hourglass-running-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-running-inverted.png"; path = "Graphics/hourglass-running-inverted.png"; sourceTree = "<group>"; };
+		24FAA42513A0E102000D36DF /* hourglass-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-running.png"; path = "Graphics/hourglass-running.png"; sourceTree = "<group>"; };
+		24FAA42613A0E102000D36DF /* hourglass-started-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-started-inverted.png"; path = "Graphics/hourglass-started-inverted.png"; sourceTree = "<group>"; };
+		24FAA42713A0E102000D36DF /* hourglass-started.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-started.png"; path = "Graphics/hourglass-started.png"; sourceTree = "<group>"; };
+		24FAA42813A0E102000D36DF /* hourglass-stopped-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-stopped-inverted.png"; path = "Graphics/hourglass-stopped-inverted.png"; sourceTree = "<group>"; };
+		24FAA42913A0E102000D36DF /* hourglass-stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hourglass-stopped.png"; path = "Graphics/hourglass-stopped.png"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -141,11 +153,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		24FAA42113A0E0F2000D36DF /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				24FAA42213A0E102000D36DF /* hourglass-paused-inverted.png */,
+				24FAA42313A0E102000D36DF /* hourglass-paused.png */,
+				24FAA42413A0E102000D36DF /* hourglass-running-inverted.png */,
+				24FAA42513A0E102000D36DF /* hourglass-running.png */,
+				24FAA42613A0E102000D36DF /* hourglass-started-inverted.png */,
+				24FAA42713A0E102000D36DF /* hourglass-started.png */,
+				24FAA42813A0E102000D36DF /* hourglass-stopped-inverted.png */,
+				24FAA42913A0E102000D36DF /* hourglass-stopped.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* MenuTimer */ = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				24FAA42113A0E0F2000D36DF /* Graphics */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -166,8 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				4EBC344A0F7D010100AE610D /* Credits.rtf */,
-				2426BF0F139FA9BF00FC20D2 /* hourglass-stopped.png */,
-				2426BF0C139FA59B00FC20D2 /* hourglass-running.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -244,8 +270,14 @@
 				4EE7B25D0F83D3AC004F66B8 /* UserDefaults.plist in Resources */,
 				4E753AA90F8E3A67007B2C05 /* MenuTimerIcon.icns in Resources */,
 				4E04D6B90F9D5E2F006023D1 /* TimerExpiredAlert.xib in Resources */,
-				2426BF0D139FA59B00FC20D2 /* hourglass-running.png in Resources */,
-				2426BF10139FA9BF00FC20D2 /* hourglass-stopped.png in Resources */,
+				24FAA42A13A0E102000D36DF /* hourglass-paused-inverted.png in Resources */,
+				24FAA42B13A0E102000D36DF /* hourglass-paused.png in Resources */,
+				24FAA42C13A0E102000D36DF /* hourglass-running-inverted.png in Resources */,
+				24FAA42D13A0E102000D36DF /* hourglass-running.png in Resources */,
+				24FAA42E13A0E102000D36DF /* hourglass-started-inverted.png in Resources */,
+				24FAA42F13A0E102000D36DF /* hourglass-started.png in Resources */,
+				24FAA43013A0E102000D36DF /* hourglass-stopped-inverted.png in Resources */,
+				24FAA43113A0E102000D36DF /* hourglass-stopped.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
