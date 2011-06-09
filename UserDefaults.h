@@ -30,6 +30,7 @@ extern NSString *UserDefaultsAnnounceExpirationKey;           ///< Is speech ena
 extern NSString *UserDefaultsAnnouncementTextKey;             ///< Text to be spoken
 extern NSString *UserDefaultsShowAlertWindowOnExpirationKey;  ///< Is alert window enabled?
 extern NSString *UserDefaultsShowStartDialogOnLaunchKey;      ///< Show start dialog when app launches?
+extern NSString *UserDefaultsShowMinutesInMenuItemKey;        ///< Show seconds in menubar?
 
 /// \brief Handles registration of NSUserDefaults settings
 @interface UserDefaults : NSObject

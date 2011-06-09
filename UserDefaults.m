@@ -30,7 +30,7 @@ NSString *UserDefaultsAnnounceExpirationKey = @"AnnounceExpiration";
 NSString *UserDefaultsAnnouncementTextKey = @"AnnouncementText";
 NSString *UserDefaultsShowAlertWindowOnExpirationKey = @"ShowAlertWindowOnExpiration";
 NSString *UserDefaultsShowStartDialogOnLaunchKey = @"ShowStartDialogOnLaunch";
-NSString *UserDefaultsShowMinutesInMenuItem = @"ShowMinutesInMenuItem";
+NSString *UserDefaultsShowMinutesInMenuItemKey = @"ShowMinutesInMenuItem";
 
 
 @implementation UserDefaults
