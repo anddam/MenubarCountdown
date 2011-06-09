@@ -102,7 +102,17 @@
 - (void)menuWillOpen:(NSMenu *)inMenu {
   NSMenuItem *startMenuItem = [menu itemAtIndex:0];
   if(self.timerIsRunning) {
-    [startMenuItem setTitle:[NSString stringWithFormat:@"Start new timer (%d minutes left)", secondsRemaining / 60]];
+    NSString *minutesLeft;
+    if(secondsRemaining < 60 && secondsRemaining >= 30) {
+      minutesLeft = @"one minute left";
+    }
+    else if(secondsRemaining < 30) {
+      minutesLeft = @"a few seconds left";
+    }
+    else {
+      minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
+    }
+    [startMenuItem setTitle:[NSString stringWithFormat:@"Start new timer (%@)", minutesLeft]];
   }
   else {
     [startMenuItem setTitle:@"Start..."];
