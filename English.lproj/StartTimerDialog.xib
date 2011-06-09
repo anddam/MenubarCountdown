@@ -119,8 +119,9 @@
 											<object class="NSTextFieldCell" key="NSCell" id="544409579">
 												<int key="NSCellFlags">-1804468671</int>
 												<int key="NSCellFlags2">71304192</int>
-												<string key="NSContents">00</string>
+												<string key="NSContents"/>
 												<reference key="NSSupport" ref="415329820"/>
+												<string key="NSPlaceholderString">1</string>
 												<reference key="NSControlView" ref="381930971"/>
 												<bool key="NSDrawsBackground">YES</bool>
 												<object class="NSColor" key="NSBackgroundColor" id="733806724">
@@ -152,7 +153,9 @@
 												<int key="NSCellFlags">917024</int>
 												<int key="NSCellFlags2">0</int>
 												<reference key="NSControlView" ref="956863116"/>
-												<double key="NSMaxValue">59</double>
+												<double key="NSValue">1</double>
+												<double key="NSMinValue">1</double>
+												<double key="NSMaxValue">240</double>
 												<double key="NSIncrement">1</double>
 												<bool key="NSValueWraps">YES</bool>
 												<bool key="NSAutorepeat">YES</bool>
@@ -164,7 +167,7 @@
 											<string key="NSFrame">{{95, 39}, {87, 17}}</string>
 											<reference key="NSSuperview" ref="325122881"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="43042918"/>
+											<reference key="NSNextKeyView" ref="586579881"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="210777823">
 												<int key="NSCellFlags">68288064</int>
@@ -176,7 +179,7 @@
 												<reference key="NSTextColor" ref="521464581"/>
 											</object>
 										</object>
-										<object class="NSButton" id="43042918">
+										<object class="NSButton" id="586579881">
 											<reference key="NSNextResponder" ref="325122881"/>
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{16, 12}, {143, 18}}</string>
@@ -184,15 +187,15 @@
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="333243610"/>
 											<bool key="NSEnabled">YES</bool>
-											<object class="NSButtonCell" key="NSCell" id="317020355">
+											<object class="NSButtonCell" key="NSCell" id="651822567">
 												<int key="NSCellFlags">-2080244224</int>
 												<int key="NSCellFlags2">0</int>
 												<string key="NSContents">Show in menu item</string>
 												<reference key="NSSupport" ref="415329820"/>
-												<reference key="NSControlView" ref="43042918"/>
+												<reference key="NSControlView" ref="586579881"/>
 												<int key="NSButtonFlags">1211912703</int>
 												<int key="NSButtonFlags2">2</int>
-												<object class="NSCustomResource" key="NSNormalImage" id="905970105">
+												<object class="NSCustomResource" key="NSNormalImage" id="310859068">
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">NSSwitch</string>
 												</object>
@@ -272,7 +275,7 @@
 								<reference key="NSControlView" ref="307758566"/>
 								<int key="NSButtonFlags">1211912703</int>
 								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="905970105"/>
+								<reference key="NSNormalImage" ref="310859068"/>
 								<reference key="NSAlternateImage" ref="923896069"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
@@ -296,7 +299,7 @@
 								<reference key="NSControlView" ref="262590135"/>
 								<int key="NSButtonFlags">1211912703</int>
 								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="905970105"/>
+								<reference key="NSNormalImage" ref="310859068"/>
 								<reference key="NSAlternateImage" ref="923896069"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
@@ -320,7 +323,7 @@
 								<reference key="NSControlView" ref="243129340"/>
 								<int key="NSButtonFlags">1211912703</int>
 								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="905970105"/>
+								<reference key="NSNormalImage" ref="310859068"/>
 								<reference key="NSAlternateImage" ref="923896069"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
@@ -363,7 +366,7 @@
 								<reference key="NSControlView" ref="133618919"/>
 								<int key="NSButtonFlags">1211912703</int>
 								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="905970105"/>
+								<reference key="NSNormalImage" ref="310859068"/>
 								<reference key="NSAlternateImage" ref="923896069"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
@@ -451,7 +454,10 @@
 					<object class="NSArray" key="dict.sortedKeys">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<string>allowsFloats</string>
+						<string>alwaysShowsDecimalSeparator</string>
 						<string>formatterBehavior</string>
+						<string>generatesDecimalNumbers</string>
+						<string>lenient</string>
 						<string>locale</string>
 						<string>maximum</string>
 						<string>maximumIntegerDigits</string>
@@ -461,26 +467,31 @@
 						<string>numberStyle</string>
 						<string>positiveFormat</string>
 						<string>roundingIncrement</string>
+						<string>roundingMode</string>
 					</object>
 					<object class="NSMutableArray" key="dict.values">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<boolean value="NO"/>
+						<boolean value="NO"/>
 						<integer value="1040"/>
+						<boolean value="NO"/>
+						<boolean value="NO"/>
 						<object class="NSLocale">
 							<string key="NS.identifier"/>
 						</object>
 						<real value="240"/>
-						<integer value="2"/>
-						<real value="0.0"/>
-						<integer value="2"/>
-						<string/>
-						<integer value="1"/>
-						<string/>
+						<integer value="3"/>
 						<real value="1"/>
+						<integer value="1"/>
+						<string>000</string>
+						<integer value="1"/>
+						<string>000</string>
+						<real value="1"/>
+						<integer value="1"/>
 					</object>
 				</object>
-				<string key="NS.positiveformat"/>
-				<string key="NS.negativeformat"/>
+				<string key="NS.positiveformat">000</string>
+				<string key="NS.negativeformat">000</string>
 				<nil key="NS.positiveattrs"/>
 				<nil key="NS.negativeattrs"/>
 				<nil key="NS.zero"/>
@@ -493,10 +504,10 @@
 						<reference key="dict.values" ref="0"/>
 					</object>
 				</object>
-				<real value="0.0" key="NS.min"/>
+				<real value="1" key="NS.min"/>
 				<real value="240" key="NS.max"/>
 				<object class="NSDecimalNumberHandler" key="NS.rounding">
-					<int key="NS.roundingmode">3</int>
+					<int key="NS.roundingmode">1</int>
 					<bool key="NS.raise.overflow">YES</bool>
 					<bool key="NS.raise.underflow">YES</bool>
 					<bool key="NS.raise.dividebyzero">YES</bool>
@@ -738,6 +749,38 @@
 					</object>
 					<int key="connectionID">142</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="381930971"/>
+						<reference key="destination" ref="586579881"/>
+					</object>
+					<int key="connectionID">159</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="586579881"/>
+						<reference key="destination" ref="307758566"/>
+					</object>
+					<int key="connectionID">160</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.ShowMinutesInMenuItem</string>
+						<reference key="source" ref="586579881"/>
+						<reference key="destination" ref="972790290"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="586579881"/>
+							<reference key="NSDestination" ref="972790290"/>
+							<string key="NSLabel">value: values.ShowMinutesInMenuItem</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.ShowMinutesInMenuItem</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">166</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -783,7 +826,6 @@
 							<reference ref="749101391"/>
 							<reference ref="333243610"/>
 							<reference ref="277648009"/>
-							<reference ref="307758566"/>
 							<reference ref="262590135"/>
 							<reference ref="243129340"/>
 							<reference ref="284759376"/>
@@ -791,6 +833,7 @@
 							<reference ref="751702899"/>
 							<reference ref="824900568"/>
 							<reference ref="160859095"/>
+							<reference ref="307758566"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -962,10 +1005,10 @@
 						<reference key="object" ref="749101391"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="381930971"/>
 							<reference ref="956863116"/>
-							<reference ref="43042918"/>
+							<reference ref="586579881"/>
 							<reference ref="124036738"/>
+							<reference ref="381930971"/>
 						</object>
 						<reference key="parent" ref="1006"/>
 						<string key="objectName">CountdownGroup</string>
@@ -1016,17 +1059,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">157</int>
-						<reference key="object" ref="43042918"/>
+						<reference key="object" ref="586579881"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="317020355"/>
+							<reference ref="651822567"/>
 						</object>
 						<reference key="parent" ref="749101391"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">158</int>
-						<reference key="object" ref="317020355"/>
-						<reference key="parent" ref="43042918"/>
+						<reference key="object" ref="651822567"/>
+						<reference key="parent" ref="586579881"/>
 					</object>
 				</object>
 			</object>
@@ -1071,6 +1114,7 @@
 					<string>31.IBPluginDependency</string>
 					<string>47.IBPluginDependency</string>
 					<string>49.IBNumberFormatterLocalizesFormatMetadataKey</string>
+					<string>49.IBNumberFormatterSampleNumberKey</string>
 					<string>49.IBPluginDependency</string>
 					<string>54.IBPluginDependency</string>
 					<string>83.IBPluginDependency</string>
@@ -1169,6 +1213,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<real value="1234"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1229,7 +1274,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">158</int>
+			<int key="maxID">166</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
