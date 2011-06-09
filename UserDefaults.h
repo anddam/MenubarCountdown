@@ -24,15 +24,12 @@
 #import <Cocoa/Cocoa.h>
 
 // Keys for this application's values in NSUserDefaults
-extern NSString *UserDefaultsTimerHoursKey;                   ///< Timer hours setting
 extern NSString *UserDefaultsTimerMinutesKey;                 ///< Timer minutes setting
-extern NSString *UserDefaultsTimerSecondsKey;                 ///< Timer seconds setting
 extern NSString *UserDefaultsPlayAlertSoundOnExpirationKey;   ///< Is alert sound enabled?
 extern NSString *UserDefaultsAnnounceExpirationKey;           ///< Is speech enabled?
 extern NSString *UserDefaultsAnnouncementTextKey;             ///< Text to be spoken
 extern NSString *UserDefaultsShowAlertWindowOnExpirationKey;  ///< Is alert window enabled?
 extern NSString *UserDefaultsShowStartDialogOnLaunchKey;      ///< Show start dialog when app launches?
-extern NSString *UserDefaultsShowSeconds;                     ///< Show seconds in menubar?
 
 /// \brief Handles registration of NSUserDefaults settings
 @interface UserDefaults : NSObject
