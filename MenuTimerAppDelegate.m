@@ -121,8 +121,10 @@
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
     if(timeRemaining > 0) {
-      int minutes = (timeRemaining / 60);
-      [statusItem setTitle:[NSString stringWithFormat:@"%d", minutes]];
+      if([[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultsShowMinutesInMenuItemKey]) {
+        int minutes = (timeRemaining / 60);
+        [statusItem setTitle:[NSString stringWithFormat:@"%d", minutes]];
+      }
       [self updateStatusMenuImage:@"running"];
     }
     else {
