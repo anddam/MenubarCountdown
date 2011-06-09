@@ -34,6 +34,7 @@
 + (void)setupUserDefaults;
 - (void)nextSecondTimerDidFire:(NSTimer*)timer;
 - (void)updateStatusItemTitle:(int)timeRemaining;
+- (void)updateStatusMenuImage:(NSString *)imageState;
 - (void)timerDidExpire;
 - (void)pauseTimer;
 - (void)resumeTimer;
@@ -74,18 +75,12 @@
 
     [stopwatch reset];
 
-#if SHOW_MINUTES_IN_MENU
-  statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-#else
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-#endif
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem retain];
     [self updateStatusItemTitle:0];
     [statusItem setMenu:menu];
-#if ! SHOW_MINUTES_IN_MENU
-  [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
-#endif
-  [menu setDelegate:self];
+    [menu setDelegate:self];
+    [self updateStatusMenuImage:@"started"];
     [statusItem setHighlightMode:YES];
     [statusItem setToolTip:NSLocalizedString(@"Menubar Countdown",
                                              @"Status Item Tooltip")];
@@ -115,18 +110,21 @@
 }
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
-#if SHOW_MINUTES_IN_MENU
-    int minutes = (timeRemaining / 60);
-    NSString* timeString = [NSString stringWithFormat:@"%02d", minutes];
-    [statusItem setTitle:timeString];
-#else
-  if(timeRemaining > 0) {
-    [statusItem setImage:[NSImage imageNamed:@"hourglass-running.png"]];
-  }
-  else {
-    [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
-  }
-#endif
+    if(timeRemaining > 0) {
+      int minutes = (timeRemaining / 60);
+      [statusItem setTitle:[NSString stringWithFormat:@"%d", minutes]];
+      [self updateStatusMenuImage:@"running"];
+    }
+    else {
+      [statusItem setTitle:@""];
+      [self updateStatusMenuImage:@"stopped"];
+    }
+}
+
+
+- (void)updateStatusMenuImage:(NSString *)imageState {
+  [statusItem setImage:[NSImage imageNamed:[NSString stringWithFormat:@"hourglass-%@", imageState]]];
+  [statusItem setAlternateImage:[NSImage imageNamed:[NSString stringWithFormat:@"hourglass-%@-inverted", imageState]]];
 }
 
 
@@ -162,33 +160,33 @@
     if (!startTimerDialogController) {
         [NSBundle loadNibNamed:@"StartTimerDialog" owner:self];
     }
-#if ! SHOW_MINUTES_IN_MENU
-  [statusItem setImage:[NSImage imageNamed:@"hourglass-stopped.png"]];
-#endif
+
+    [self updateStatusMenuImage:@"started"];
     [startTimerDialogController showDialog];
 }
 
 - (IBAction)resetTimer:(id)sender {
-  [self dismissTimerExpiredAlert:sender];
-  self.timerIsRunning = NO;
-  secondsRemaining = 0;
-  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
-  [pauseMenuItem setEnabled:NO];
-  [pauseMenuItem setTitle:@"Pause"];
-  [self updateStatusItemTitle:0];
-  [stopwatch reset];
+    [self dismissTimerExpiredAlert:sender];
+    self.timerIsRunning = NO;
+    secondsRemaining = 0;
+    NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
+    [pauseMenuItem setEnabled:NO];
+    [pauseMenuItem setTitle:@"Pause"];
+    [self updateStatusItemTitle:0];
+    [self updateStatusMenuImage:@"started"];
+    [stopwatch reset];
 }
 
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender {
     [self dismissTimerExpiredAlert:sender];
-  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
-  [pauseMenuItem setEnabled:YES];
+    NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
+    [pauseMenuItem setEnabled:YES];
 
     [startTimerDialogController dismissDialog:sender];
 
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-  [self resetTimer:self];
+    [self resetTimer:self];
     timerSettingSeconds = (int)[startTimerDialogController timerInterval];
     self.timerIsRunning = YES;
     [self updateStatusItemTitle:timerSettingSeconds];
@@ -200,10 +198,12 @@
   if(self.timerIsRunning) {
     [self pauseTimer];
     [pauseResumeItem setTitle:@"Resume"];
+    [self updateStatusMenuImage:@"paused"];
   }
   else {
     [self resumeTimer];
     [pauseResumeItem setTitle:@"Pause"];
+    [self updateStatusMenuImage:@"running"];
   }
 }
 
