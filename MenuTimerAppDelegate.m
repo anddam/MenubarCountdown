@@ -110,7 +110,7 @@
       minutesLeft = @"one minute left";
     }
     else if(secondsRemaining < 30) {
-      minutesLeft = @"a few seconds left";
+      minutesLeft = @"almost finished";
     }
     else {
       minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
