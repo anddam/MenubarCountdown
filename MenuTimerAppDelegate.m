@@ -106,10 +106,10 @@
   NSMenuItem *startMenuItem = [menu itemAtIndex:0];
   if(self.timerIsRunning) {
     NSString *minutesLeft;
-    if(secondsRemaining < 60 && secondsRemaining >= 30) {
+    if(secondsRemaining < 60 && secondsRemaining >= 20) {
       minutesLeft = @"one minute left";
     }
-    else if(secondsRemaining < 30) {
+    else if(secondsRemaining < 20) {
       minutesLeft = @"almost finished";
     }
     else {
