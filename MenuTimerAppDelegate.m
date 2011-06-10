@@ -203,6 +203,7 @@
 
     [self resetTimer:self];
     timerSettingSeconds = (int)[startTimerDialogController timerInterval];
+    secondsRemaining = nearbyint(timerSettingSeconds - [stopwatch elapsedTimeInterval]);
     self.timerIsRunning = YES;
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
