@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>NSUserDefaultsController</string>
 			<string>NSMenu</string>
 			<string>NSMenuItem</string>
 			<string>NSCustomObject</string>
@@ -123,6 +124,9 @@
 			<object class="NSCustomObject" id="532625619">
 				<string key="NSClassName">GrowlHandler</string>
 			</object>
+			<object class="NSUserDefaultsController" id="565044132">
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -198,6 +202,22 @@
 						<reference key="destination" ref="310167896"/>
 					</object>
 					<int key="connectionID">524</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: timerIsStarted</string>
+						<reference key="source" ref="978553517"/>
+						<reference key="destination" ref="613508438"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="978553517"/>
+							<reference key="NSDestination" ref="613508438"/>
+							<string key="NSLabel">enabled: timerIsStarted</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">timerIsStarted</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">529</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -297,6 +317,11 @@
 						<reference key="object" ref="310167896"/>
 						<reference key="parent" ref="945262297"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">526</int>
+						<reference key="object" ref="565044132"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -388,7 +413,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">525</int>
+			<int key="maxID">529</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

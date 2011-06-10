@@ -44,6 +44,8 @@
     IBOutlet GrowlHandler *growl;                                      ///< Outlet for GrowlHandler
 }
 
+@property (nonatomic, readonly) BOOL timerIsStarted;
+
 /// \brief Indicates whether the timer is running
 ///
 /// This property is bound to the Stop menu item's Enabled property

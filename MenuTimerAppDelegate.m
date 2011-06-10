@@ -70,7 +70,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     timerSettingSeconds = 25 * 60;
-    secondsRemaining = timerSettingSeconds;
     self.timerIsRunning = NO;
 
     [stopwatch reset];
@@ -97,6 +96,10 @@
     if ([defaults boolForKey:UserDefaultsShowStartDialogOnLaunchKey]) {
         [self startStopTimer:self];
     }
+}
+
+- (BOOL)timerIsStarted {
+  return secondsRemaining > 0;
 }
 
 - (void)menuWillOpen:(NSMenu *)inMenu {
