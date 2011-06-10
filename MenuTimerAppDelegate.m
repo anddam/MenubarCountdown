@@ -115,7 +115,7 @@
     else {
       minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
     }
-    [startMenuItem setTitle:[NSString stringWithFormat:@"Start new timer (%@)", minutesLeft]];
+    [startMenuItem setTitle:[NSString stringWithFormat:@"New timer (%@)", minutesLeft]];
   }
   else {
     [startMenuItem setTitle:@"Start..."];
