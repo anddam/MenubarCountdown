@@ -120,6 +120,17 @@
   else {
     [startMenuItem setTitle:@"Start..."];
   }
+  
+  NSMenuItem *pauseResumeMenuItem = [menu itemAtIndex:1];
+  if(!self.timerIsStarted) {
+    [pauseResumeMenuItem setTitle:@"No timer running"];
+  }
+  else if(self.timerIsRunning) {
+    [pauseResumeMenuItem setTitle:@"Pause"];
+  }
+  else {
+    [pauseResumeMenuItem setTitle:@"Resume"];
+  }
 }
 
 - (void)updateStatusItemTitle:(int)timeRemaining {
@@ -184,9 +195,6 @@
     [self dismissTimerExpiredAlert:sender];
     self.timerIsRunning = NO;
     secondsRemaining = 0;
-    NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
-    [pauseMenuItem setEnabled:NO];
-    [pauseMenuItem setTitle:@"Pause"];
     [self updateStatusItemTitle:0];
     [self updateStatusMenuImage:@"started"];
     [stopwatch reset];
@@ -194,9 +202,6 @@
 
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender {
     [self dismissTimerExpiredAlert:sender];
-    NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
-    [pauseMenuItem setEnabled:YES];
-
     [startTimerDialogController dismissDialog:sender];
 
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -210,15 +215,12 @@
 }
 
 - (IBAction)pauseResumeTimer:(id)sender {
-  NSMenuItem *pauseResumeItem = [menu itemAtIndex:1];
   if(self.timerIsRunning) {
     [self pauseTimer];
-    [pauseResumeItem setTitle:@"Resume"];
     [self updateStatusMenuImage:@"paused"];
   }
   else {
     [self resumeTimer];
-    [pauseResumeItem setTitle:@"Pause"];
     [self updateStatusMenuImage:@"running"];
   }
 }
@@ -243,9 +245,6 @@
 
 
 - (void)timerDidExpire {
-  NSMenuItem *pauseMenuItem = [menu itemAtIndex:1];
-  [pauseMenuItem setEnabled:NO];
-
     self.timerIsRunning = NO;
     [self updateStatusItemTitle:0];
 
