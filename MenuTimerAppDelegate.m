@@ -104,7 +104,7 @@
 
 - (void)menuWillOpen:(NSMenu *)inMenu {
   NSMenuItem *startMenuItem = [menu itemAtIndex:0];
-  if(self.timerIsRunning) {
+  if(self.timerIsStarted) {
     NSString *minutesLeft;
     if(secondsRemaining < 60 && secondsRemaining >= 20) {
       minutesLeft = @"one minute left";
