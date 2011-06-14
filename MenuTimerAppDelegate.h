@@ -66,6 +66,7 @@
 
 /// \brief Invoked when the Start button on the StartTimerDialogController's window is clicked
 - (IBAction)startTimerDialogStartButtonWasClicked:(id)sender;
+- (IBAction)startTimerDialogCancelButtonWasClicked:(id)sender;
 
 /// \brief Invoked when OK button is clicked in timer-expired alert window
 - (IBAction)dismissTimerExpiredAlert:(id)sender;

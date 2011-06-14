@@ -149,6 +149,7 @@
 
 
 - (void)updateStatusMenuImage:(NSString *)imageState {
+  // TODO: Only update image if state has changed
   [statusItem setImage:[NSImage imageNamed:[NSString stringWithFormat:@"hourglass-%@", imageState]]];
   [statusItem setAlternateImage:[NSImage imageNamed:[NSString stringWithFormat:@"hourglass-%@-inverted", imageState]]];
 }
@@ -212,6 +213,11 @@
     self.timerIsRunning = YES;
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
+}
+
+- (IBAction)startTimerDialogCancelButtonWasClicked:(id)sender {
+  [startTimerDialogController dismissDialog:sender];
+  [self updateStatusItemTitle:timerSettingSeconds];
 }
 
 - (IBAction)pauseResumeTimer:(id)sender {
