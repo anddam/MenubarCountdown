@@ -63,8 +63,9 @@
 						<object class="NSTextField" id="277648009">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 314}, {89, 17}}</string>
+							<string key="NSFrame">{{17, 291}, {89, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="749101391"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="727866002">
@@ -112,6 +113,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{18, 36}, {46, 22}}</string>
 											<reference key="NSSuperview" ref="325122881"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="956863116"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="544409579">
@@ -144,6 +146,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{67, 33}, {19, 27}}</string>
 											<reference key="NSSuperview" ref="325122881"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="124036738"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSStepperCell" key="NSCell" id="628511729">
@@ -163,6 +166,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{95, 39}, {87, 17}}</string>
 											<reference key="NSSuperview" ref="325122881"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="586579881"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="210777823">
@@ -180,6 +184,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{16, 12}, {166, 18}}</string>
 											<reference key="NSSuperview" ref="325122881"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="333243610"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="651822567">
@@ -206,11 +211,13 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {197, 68}}</string>
 									<reference key="NSSuperview" ref="749101391"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="381930971"/>
 								</object>
 							</object>
 							<string key="NSFrame">{{108, 263}, {199, 70}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="325122881"/>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
@@ -239,6 +246,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 242}, {268, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="307758566"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="471761072">
@@ -256,6 +264,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 218}, {171, 18}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="262590135"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="37055212">
@@ -279,6 +288,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 198}, {171, 18}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="243129340"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="242657655">
@@ -302,6 +312,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 178}, {171, 18}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="160859095"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="33992852">
@@ -325,6 +336,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 82}, {284, 65}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="133618919"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="180530270">
@@ -343,6 +355,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 58}, {288, 18}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="751702899"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="462999557">
@@ -366,6 +379,7 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{118, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="824900568"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="90726167">
@@ -387,6 +401,7 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{214, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="695143281">
 								<int key="NSCellFlags">67239424</int>
@@ -407,6 +422,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 155}, {136, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="284759376"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="596455106">
@@ -422,6 +438,7 @@
 					</object>
 					<string key="NSFrame">{{7, 11}, {324, 351}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="277648009"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -684,6 +701,14 @@
 					<int key="connectionID">134</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">dismissDialog:</string>
+						<reference key="source" ref="1017184205"/>
+						<reference key="destination" ref="751702899"/>
+					</object>
+					<int key="connectionID">135</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.ShowAlertWindowOnExpiration</string>
 						<reference key="source" ref="262590135"/>
@@ -755,14 +780,6 @@
 					</object>
 					<int key="connectionID">166</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">startTimerDialogCancelButtonWasClicked:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="751702899"/>
-					</object>
-					<int key="connectionID">167</int>
-				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -807,7 +824,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="749101391"/>
 							<reference ref="333243610"/>
-							<reference ref="277648009"/>
 							<reference ref="262590135"/>
 							<reference ref="243129340"/>
 							<reference ref="284759376"/>
@@ -816,6 +832,7 @@
 							<reference ref="307758566"/>
 							<reference ref="751702899"/>
 							<reference ref="824900568"/>
+							<reference ref="277648009"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -1258,7 +1275,201 @@
 			<nil key="sourceID"/>
 			<int key="maxID">167</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">GrowlHandler</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GrowlHandler.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">MenuTimerAppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dismissTimerExpiredAlert:</string>
+							<string>pauseResumeTimer:</string>
+							<string>resetTimer:</string>
+							<string>showAboutPanel:</string>
+							<string>startStopTimer:</string>
+							<string>startTimerDialogCancelButtonWasClicked:</string>
+							<string>startTimerDialogStartButtonWasClicked:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dismissTimerExpiredAlert:</string>
+							<string>pauseResumeTimer:</string>
+							<string>resetTimer:</string>
+							<string>showAboutPanel:</string>
+							<string>startStopTimer:</string>
+							<string>startTimerDialogCancelButtonWasClicked:</string>
+							<string>startTimerDialogStartButtonWasClicked:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">dismissTimerExpiredAlert:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">pauseResumeTimer:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">resetTimer:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showAboutPanel:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">startStopTimer:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">startTimerDialogCancelButtonWasClicked:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">startTimerDialogStartButtonWasClicked:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>growl</string>
+							<string>menu</string>
+							<string>startTimerDialogController</string>
+							<string>stopwatch</string>
+							<string>timerExpiredAlertController</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>GrowlHandler</string>
+							<string>NSMenu</string>
+							<string>StartTimerDialogController</string>
+							<string>Stopwatch</string>
+							<string>TimerExpiredAlertController</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>growl</string>
+							<string>menu</string>
+							<string>startTimerDialogController</string>
+							<string>stopwatch</string>
+							<string>timerExpiredAlertController</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">growl</string>
+								<string key="candidateClassName">GrowlHandler</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">menu</string>
+								<string key="candidateClassName">NSMenu</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">startTimerDialogController</string>
+								<string key="candidateClassName">StartTimerDialogController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">stopwatch</string>
+								<string key="candidateClassName">Stopwatch</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">timerExpiredAlertController</string>
+								<string key="candidateClassName">TimerExpiredAlertController</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MenuTimerAppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">StartTimerDialogController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">dismissDialog:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">dismissDialog:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">dismissDialog:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">startTimerDialog</string>
+						<string key="NS.object.0">NSWindow</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">startTimerDialog</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">startTimerDialog</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/StartTimerDialogController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">Stopwatch</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/Stopwatch.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TextField</string>
+					<string key="superclassName">NSTextField</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TextField.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TimerExpiredAlertController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TimerExpiredAlertController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
