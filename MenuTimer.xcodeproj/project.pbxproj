@@ -88,7 +88,7 @@
 		4EFE68CF0F7C515A00251776 /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
 		4EFE68D00F7C515A00251776 /* Stopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stopwatch.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Menubar Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menubar Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Menubar Hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menubar Hourglass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Menubar Countdown.app */,
+				8D1107320486CEB800E47090 /* Menubar Hourglass.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			name = MenuTimer;
 			productInstallPath = "$(HOME)/Applications";
 			productName = MenuTimer;
-			productReference = 8D1107320486CEB800E47090 /* Menubar Countdown.app */;
+			productReference = 8D1107320486CEB800E47090 /* Menubar Hourglass.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -371,7 +371,7 @@
 				GCC_PREFIX_HEADER = MenuTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "Menubar Countdown";
+				PRODUCT_NAME = "Menubar Hourglass";
 			};
 			name = Debug;
 		};
@@ -390,7 +390,7 @@
 				GCC_PREFIX_HEADER = MenuTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "Menubar Countdown";
+				PRODUCT_NAME = "Menubar Hourglass";
 			};
 			name = Release;
 		};

@@ -89,7 +89,7 @@
 					</object>
 					<object class="NSMenuItem" id="474293149">
 						<reference key="NSMenu" ref="945262297"/>
-						<string key="NSTitle">About Menubar Countdown</string>
+						<string key="NSTitle">About Menubar Hourglass</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="335315670"/>
@@ -97,7 +97,7 @@
 					</object>
 					<object class="NSMenuItem" id="101635464">
 						<reference key="NSMenu" ref="945262297"/>
-						<string key="NSTitle">Quit Menubar Countdown</string>
+						<string key="NSTitle">Quit Menubar Hourglass</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="335315670"/>
