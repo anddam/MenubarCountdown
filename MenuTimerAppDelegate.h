@@ -28,13 +28,20 @@
 @class TimerExpiredAlertController;
 @class GrowlHandler;
 
+typedef enum {
+  kTimerStateStarting,
+  kTimerStateRunning,
+  kTimerStatePaused,
+  kTimerStateStopped,
+  kNumTimerStates
+} kTimerStates;
+
 /// \brief Application delegate
 @interface MenuTimerAppDelegate : NSObject <NSMenuDelegate> {
     int timerSettingSeconds;   ///< Timer setting
     int secondsRemaining;      ///< Number of seconds remaining
 
-    BOOL timerIsRunning;       ///< Instance variable for \c timerIsRunning property
-
+    kTimerStates _timerState;
     NSStatusItem *statusItem;  ///< Reference to NSStatusItem
 
     IBOutlet NSMenu *menu;                                             ///< Outlet for main menu
@@ -44,12 +51,13 @@
     IBOutlet GrowlHandler *growl;                                      ///< Outlet for GrowlHandler
 }
 
+@property (nonatomic, assign) kTimerStates timerState;
 @property (nonatomic, readonly) BOOL timerIsStarted;
 
 /// \brief Indicates whether the timer is running
 ///
 /// This property is bound to the Stop menu item's Enabled property
-@property (nonatomic) BOOL timerIsRunning;
+//@property (nonatomic) BOOL timerIsRunning;
 
 /// \brief Handle the "About..." menu item
 - (IBAction)showAboutPanel:(id)sender;

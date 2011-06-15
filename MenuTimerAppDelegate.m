@@ -36,8 +36,6 @@
 - (void)updateStatusItemTitle:(int)timeRemaining;
 - (void)updateStatusMenuImage:(NSString *)imageState;
 - (void)timerDidExpire;
-- (void)pauseTimer;
-- (void)resumeTimer;
 - (void)announceTimerExpired;
 - (NSString*)announcementText;
 - (void)showTimerExpiredAlert;
@@ -46,7 +44,7 @@
 
 @implementation MenuTimerAppDelegate
 
-@synthesize timerIsRunning;
+@synthesize timerState = _timerState;
 
 
 + (void)initialize {
@@ -70,8 +68,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     timerSettingSeconds = 25 * 60;
-    self.timerIsRunning = NO;
-
+    self.timerState = kTimerStateStarting;
     [stopwatch reset];
 
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -99,37 +96,76 @@
 }
 
 - (BOOL)timerIsStarted {
-  return secondsRemaining > 0;
+  return self.timerState == kTimerStateRunning || self.timerState == kTimerStatePaused;
+}
+
+- (kTimerStates)timerState {
+  return _timerState;
+}
+
+- (void)setTimerState:(kTimerStates)timerState {
+  if(_timerState != timerState) {
+    _timerState = timerState;
+    switch(timerState) {
+      case kTimerStateStarting:
+        [self updateStatusMenuImage:@"started"];
+        break;
+      case kTimerStateRunning:
+        [self updateStatusMenuImage:@"running"];
+        break;
+      case kTimerStatePaused:
+        [self updateStatusMenuImage:@"paused"];
+        break;
+      case kTimerStateStopped:
+        [self updateStatusMenuImage:@"stopped"];
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 - (void)menuWillOpen:(NSMenu *)inMenu {
   NSMenuItem *startMenuItem = [menu itemAtIndex:0];
-  if(self.timerIsStarted) {
-    NSString *minutesLeft;
-    if(secondsRemaining < 60 && secondsRemaining >= 20) {
-      minutesLeft = @"one minute left";
+  switch(self.timerState) {
+    case kTimerStateStarting:
+    case kTimerStateStopped:
+      [startMenuItem setTitle:@"Start..."];
+      break;
+    case kTimerStateRunning:
+    case kTimerStatePaused:
+    {
+      NSString *minutesLeft;
+      if(secondsRemaining < 60 && secondsRemaining >= 20) {
+        minutesLeft = @"one minute left";
+      }
+      else if(secondsRemaining < 20) {
+        minutesLeft = @"almost finished";
+      }
+      else {
+        minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
+      }
+      [startMenuItem setTitle:[NSString stringWithFormat:@"New timer (%@)", minutesLeft]];
     }
-    else if(secondsRemaining < 20) {
-      minutesLeft = @"almost finished";
-    }
-    else {
-      minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
-    }
-    [startMenuItem setTitle:[NSString stringWithFormat:@"New timer (%@)", minutesLeft]];
-  }
-  else {
-    [startMenuItem setTitle:@"Start..."];
+      break;
+    default:
+      break;
   }
   
   NSMenuItem *pauseResumeMenuItem = [menu itemAtIndex:1];
-  if(!self.timerIsStarted) {
-    [pauseResumeMenuItem setTitle:@"No timer running"];
-  }
-  else if(self.timerIsRunning) {
-    [pauseResumeMenuItem setTitle:@"Pause"];
-  }
-  else {
-    [pauseResumeMenuItem setTitle:@"Resume"];
+  switch(self.timerState) {
+    case kTimerStateStarting:
+    case kTimerStateStopped:
+      [pauseResumeMenuItem setTitle:@"No timer running"];
+      break;
+    case kTimerStateRunning:
+      [pauseResumeMenuItem setTitle:@"Pause"];
+      break;
+    case kTimerStatePaused:
+      [pauseResumeMenuItem setTitle:@"Resume"];
+      break;
+    default:
+      break;
   }
 }
 
@@ -139,11 +175,9 @@
         int minutes = (timeRemaining / 60);
         [statusItem setTitle:[NSString stringWithFormat:@"%d", minutes]];
       }
-      [self updateStatusMenuImage:@"running"];
     }
     else {
       [statusItem setTitle:@""];
-      [self updateStatusMenuImage:@"stopped"];
     }
 }
 
@@ -168,7 +202,7 @@
 
 
 - (void)nextSecondTimerDidFire:(NSTimer*)timer {
-    if (self.timerIsRunning) {
+    if (self.timerState == kTimerStateRunning) {
         secondsRemaining = nearbyint(timerSettingSeconds - [stopwatch elapsedTimeInterval]);
         if (secondsRemaining <= 0) {
             [self timerDidExpire];
@@ -188,13 +222,12 @@
         [NSBundle loadNibNamed:@"StartTimerDialog" owner:self];
     }
 
-    [self updateStatusMenuImage:@"started"];
     [startTimerDialogController showDialog];
 }
 
 - (IBAction)resetTimer:(id)sender {
     [self dismissTimerExpiredAlert:sender];
-    self.timerIsRunning = NO;
+    self.timerState = kTimerStateStarting;
     secondsRemaining = 0;
     [self updateStatusItemTitle:0];
     [self updateStatusMenuImage:@"started"];
@@ -210,7 +243,7 @@
     [self resetTimer:self];
     timerSettingSeconds = (int)[startTimerDialogController timerInterval];
     secondsRemaining = nearbyint(timerSettingSeconds - [stopwatch elapsedTimeInterval]);
-    self.timerIsRunning = YES;
+    self.timerState = kTimerStateRunning;
     [self updateStatusItemTitle:timerSettingSeconds];
     [self waitForNextSecond];
 }
@@ -221,37 +254,25 @@
 }
 
 - (IBAction)pauseResumeTimer:(id)sender {
-  if(self.timerIsRunning) {
-    [self pauseTimer];
-    [self updateStatusMenuImage:@"paused"];
+  if(secondsRemaining < 1) {
+    return;
   }
-  else {
-    [self resumeTimer];
+  
+  if(self.timerState == kTimerStateRunning) {
+    self.timerState = kTimerStatePaused;
+  }
+  else if(self.timerState == kTimerStatePaused) {
+    timerSettingSeconds = secondsRemaining;
+    self.timerState = kTimerStateRunning;
+    [stopwatch reset];
+    [self updateStatusItemTitle:timerSettingSeconds];
+    [self waitForNextSecond];
     [self updateStatusMenuImage:@"running"];
   }
 }
 
-- (void)pauseTimer {
-  if(secondsRemaining < 1) {
-    return;
-  }
-  self.timerIsRunning = NO;
-}
-
-- (void)resumeTimer {
-    if (secondsRemaining < 1) {
-        return;
-    }
-    timerSettingSeconds = secondsRemaining;
-    self.timerIsRunning = YES;
-    [stopwatch reset];
-    [self updateStatusItemTitle:timerSettingSeconds];
-    [self waitForNextSecond];
-}
-
-
 - (void)timerDidExpire {
-    self.timerIsRunning = NO;
+    self.timerState = kTimerStateStopped;
     [self updateStatusItemTitle:0];
 
     [growl notifyTimerExpired:[self announcementText]];
