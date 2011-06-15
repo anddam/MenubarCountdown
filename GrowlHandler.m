@@ -57,12 +57,12 @@ NSString *GrowlHandlerTimerExpiredNotificationWasClicked = @"GrowlHandlerTimerEx
 
 - (void)notifyTimerExpired:(NSString *)announcementText {
     [GrowlApplicationBridge notifyWithTitle:timerExpiredNotification
-                                description:announcementText
-                           notificationName:timerExpiredNotification
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:timerExpiredNotification];
+     description:announcementText
+     notificationName:timerExpiredNotification
+     iconData:nil
+     priority:0
+     isSticky:NO
+     clickContext:timerExpiredNotification];
 }
 
 
@@ -85,7 +85,7 @@ NSString *GrowlHandlerTimerExpiredNotificationWasClicked = @"GrowlHandlerTimerEx
 - (void)growlNotificationWasClicked:(id)clickContext {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:GrowlHandlerTimerExpiredNotificationWasClicked
-                      object:clickContext];
+     object:clickContext];
 }
 
 

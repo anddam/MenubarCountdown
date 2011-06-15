@@ -46,8 +46,8 @@
     const uint64_t now = mach_absolute_time();
     const uint64_t elapsed = now - startTime;
 
-    Nanoseconds elapsedNano = AbsoluteToNanoseconds(*(AbsoluteTime *)&elapsed);
-    return *(uint64_t *)&elapsedNano;
+    Nanoseconds elapsedNano = AbsoluteToNanoseconds(*(AbsoluteTime*)&elapsed);
+    return *(uint64_t*)&elapsedNano;
 }
 
 

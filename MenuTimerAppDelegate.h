@@ -29,11 +29,11 @@
 @class GrowlHandler;
 
 typedef enum {
-  kTimerStateStarting,
-  kTimerStateRunning,
-  kTimerStatePaused,
-  kTimerStateStopped,
-  kNumTimerStates
+    kTimerStateStarting,
+    kTimerStateRunning,
+    kTimerStatePaused,
+    kTimerStateStopped,
+    kNumTimerStates
 } kTimerStates;
 
 /// \brief Application delegate
