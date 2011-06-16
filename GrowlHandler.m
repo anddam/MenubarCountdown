@@ -30,7 +30,7 @@ NSString *GrowlHandlerTimerExpiredNotificationWasClicked = @"GrowlHandlerTimerEx
 
 
 - (id)init {
-    applicationName = NSLocalizedString(@"Menubar Countdown",
+    applicationName = NSLocalizedString(@"Menubar Hourglass",
                                         @"Growl Application Name");
     [applicationName retain];
 
