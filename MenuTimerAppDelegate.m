@@ -78,7 +78,7 @@
     [menu setDelegate:self];
     [self updateStatusMenuImage:@"started"];
     [statusItem setHighlightMode:YES];
-    [statusItem setToolTip:NSLocalizedString(@"Menubar Countdown",
+    [statusItem setToolTip:NSLocalizedString(@"Menubar Hourglass",
                                              @"Status Item Tooltip")];
 
     // Call startTimer: whenever Growl notification is clicked
