@@ -135,17 +135,18 @@
     case kTimerStateRunning:
     case kTimerStatePaused:
     {
-        NSString *minutesLeft;
-        if (secondsRemaining < 60 && secondsRemaining >= 20) {
-            minutesLeft = @"one minute left";
+        NSString *minutesLeftString;
+        int minutesRemaining = (secondsRemaining / 60) + 1;
+        if (minutesRemaining <= 1 && secondsRemaining >= 20) {
+            minutesLeftString = @"one minute left";
         }
         else if (secondsRemaining < 20) {
-            minutesLeft = @"almost finished";
+            minutesLeftString = @"almost finished";
         }
         else {
-            minutesLeft = [NSString stringWithFormat:@"%d minutes left", secondsRemaining / 60];
+            minutesLeftString = [NSString stringWithFormat:@"%d minutes left", minutesRemaining];
         }
-        [startMenuItem setTitle:[NSString stringWithFormat:@"New timer (%@)", minutesLeft]];
+        [startMenuItem setTitle:[NSString stringWithFormat:@"New timer (%@)", minutesLeftString]];
     }
     break;
     default:
