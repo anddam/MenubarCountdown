@@ -1,6 +1,11 @@
-Menubar Countdown
+Menubar Hourglass
 Version 1.2
 Copyright 2009 Capable Hands Technologies, Inc.
+
+Menubar Hourglass was forked from Menubar Countdown, originally
+created by Capable Hands Technologies, Inc.
+
+See <http://www.teragonaudio.com/> for support information.
 
 See <http://capablehands.net/menubarcountdown> for information
 about this software.
@@ -23,6 +28,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 RELEASE NOTES
+
+v1.3 (2011/06/18) - Fork from Teragon Audio
+
+- 64-bit support
+
+- Updated to Growl 1.2.2
+
+- Added hourglass icon
+
+- Timer only counts down minutes
 
 v1.2 (2009/06/22)
 
