@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>MenuTimerIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.nikreiman.${PRODUCT_NAME:identifier}</string>
+	<string>com.teragonaudio.${PRODUCT_NAME:identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
