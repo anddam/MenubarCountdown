@@ -46,6 +46,20 @@
 
 @synthesize timerState = _timerState;
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+    switch (self.timerState) {
+        case kTimerStateStopped:
+            [self startStopTimer:self];
+            break;
+        case kTimerStatePaused:
+        case kTimerStateStarting:
+        case kTimerStateRunning:
+            break;
+        default:
+            break;
+    }
+    return YES;
+}
 
 + (void)initialize {
     [UserDefaults registerDefaults];
